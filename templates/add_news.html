@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Добавить новость</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Добавить новость</h1>
-    <form method="post" action="{{ url_for('add_news') }}">
-        <label for="title">Заголовок:</label>
-        <input type="text" id="title" name="title" required>
+    <div class="container mt-5">
+        <h1>Добавить новость</h1>
+        <form method="post" action="{{ url_for('add_news') }}" class="mt-3">
+            <div class="form-group">
+                <label for="title">Заголовок:</label>
+                <input type="text" id="title" name="title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Текст новости:</label>
+                <textarea id="content" name="content" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Добавить новость</button>
+        </form>
         <br>
-        <label for="content">Текст новости:</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <button type="submit">Добавить новость</button>
-    </form>
-    <br>
-    <a href="{{ url_for('home') }}">На главную</a>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">На главную</a>
+    </div>
+
+    <!-- Подключение Bootstrap JS и Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
