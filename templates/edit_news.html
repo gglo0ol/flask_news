@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать новость</title>
+</head>
+<body>
+    <h1>Редактировать новость</h1>
+    <form method="post" action="{{ url_for('edit_news', news_id=news.id) }}">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" value="{{ news.title }}" required>
+        <br>
+        <label for="content">Текст новости:</label>
+        <textarea id="content" name="content" required>{{ news.content }}</textarea>
+        <br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <br>
+    <a href="{{ url_for('home') }}">На главную</a>
+</body>
+</html>

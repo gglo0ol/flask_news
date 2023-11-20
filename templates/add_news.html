@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить новость</title>
+</head>
+<body>
+    <h1>Добавить новость</h1>
+    <form method="post" action="{{ url_for('add_news') }}">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="content">Текст новости:</label>
+        <textarea id="content" name="content" required></textarea>
+        <br>
+        <button type="submit">Добавить новость</button>
+    </form>
+    <br>
+    <a href="{{ url_for('home') }}">На главную</a>
+</body>
+</html>
